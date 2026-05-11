@@ -27,8 +27,8 @@ app.use(passport.initialize())
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 // Create folders
-if (!fs.existsSync('uploads')) fs.mkdirSync('uploads')
-if (!fs.existsSync('uploads/profiles')) fs.mkdirSync('uploads/profiles', { recursive: true })
+// if (!fs.existsSync('uploads')) fs.mkdirSync('uploads')
+// if (!fs.existsSync('uploads/profiles')) fs.mkdirSync('uploads/profiles', { recursive: true })
 
 // Routes
 const authRoutes = require('./routes/authRoutes')
