@@ -32,12 +32,12 @@ exports.signup = async (req, res) => {
       isAdmin: isAdmin === true
     })
 
-    try {
-      await sendEmail(email, otp)
-      console.log(`OTP email sent to: ${email}`)
-    } catch (emailErr) {
-      console.log('Email send failed, OTP in console:', otp)
-    }
+   try {
+  await sendEmail(email, otp)
+  console.log(`OTP email sent to: ${email}`)
+} catch (emailErr) {
+  console.log('Email send failed:', emailErr.message) // 👈 log the actual error
+}
 
     res.status(201).json({ message: 'OTP sent to email', email })
   } catch (err) {
